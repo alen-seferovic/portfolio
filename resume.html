@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Resume</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Responsive PDF container */
+    .pdf-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 141%; /* roughly A4 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .pdf-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 600px) {
+      .pdf-container {
+        padding-bottom: 180%; /* taller on narrow screens */
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,10 +48,12 @@
     <div class="box">
       <p>You can view my resume below or open it in a new tab:</p>
 
-      <!-- Embedded PDF -->
-      <iframe src="resume.pdf" style="width:100%; height:600px; border:1px solid #ccc; border-radius:8px;"></iframe>
+      <!-- Responsive embedded PDF -->
+      <div class="pdf-container">
+        <iframe src="resume.pdf"></iframe>
+      </div>
 
-      <!-- Button to open in a new tab -->
+      <!-- Button to open PDF in new tab -->
       <a href="resume.pdf" class="button" target="_blank">📄 View Resume in Full Screen</a>
     </div>
   </main>
