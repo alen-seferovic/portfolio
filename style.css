@@ -78,15 +78,6 @@ main {
   margin-bottom: 1rem;
 }
 
-/* Responsive profile image */
-@media (max-width: 600px) {
-  .profile-img {
-    float: none;
-    display: block;
-    margin: 0 auto 1rem auto;
-  }
-}
-
 /* Slideshow iframe */
 .iframe-container {
   position: relative;
