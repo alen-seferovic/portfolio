@@ -78,9 +78,6 @@ main {
     display: block;
     margin: 0 auto 1rem auto;
   }
-  .iframe-container {
-    padding-bottom: 56.25%; /* maintain 16:9 ratio */
-  }
 }
 
 /* Slideshow iframe */
@@ -101,6 +98,33 @@ main {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Embedded PDF */
+.pdf-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 141%; /* roughly A4 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .pdf-container {
+    padding-bottom: 180%; /* taller on narrow screens */
+  }
 }
 
 /* Buttons */
@@ -130,4 +154,3 @@ footer {
   color: #666;
   clear: both;
 }
-
